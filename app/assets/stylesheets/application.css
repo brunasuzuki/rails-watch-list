@@ -13,5 +13,3 @@
  *= require_tree .
  *= require_self
  */
-/* app/assets/stylesheets/application.scss */
-@import "bootstrap/scss/bootstrap";
