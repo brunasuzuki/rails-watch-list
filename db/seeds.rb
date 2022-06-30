@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# API (tudo que vem dps da ? é a Query,  manda junto com a aquisição a chave de API )
