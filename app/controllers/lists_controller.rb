@@ -3,3 +3,5 @@ class ListsController < ApplicationController
     @lists = List.all
   end
 end
+
+# to list all movies
