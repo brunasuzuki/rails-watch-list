@@ -1,6 +1,7 @@
 <div class="mt-5">
   <h1>Lists</h1>
 
+  <%# @lists do controllers %>
   <% @lists.each do |list| %>
     <%= link_to list_path(list) do %>
       <p><%= list.name %></p>
