@@ -2,5 +2,33 @@
   <h1><%= @list.name %></h1>
 </div>
 
+<h3>Movies</h3>
+
+<% @list.bookmarks.each do |bookmark| %>
+  <div class="container">
+    <div class="row py-3">
+      <div class="col-4">
+        <%= image_tag movie.poster_url, width: 160 %>
+      </div>
+      <div class="col-6">
+        <p><%= bookmark.title %></p>
+        <p><%= bookmark.overview %></p>
+      </div>
+    </div>
+    <%= link_to 'delete', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>
+
+<hr>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%# association equivale ao dropdown, e o collection deixa em ordem alfabetica %>
+  <%= f.association :movie, collection: @movies, prompt: 'Select a movie', lable: false %>
+  <%= f.input :comment, placeholder: 'Enter a comment...', lable: false %>
+  <%= f.submit class: 'btn btn-success' %>
+<%= end %>
+
+<hr>
+
 <%# a volta do caminho do botao do index.html.erb %>
 <%= link_to 'back', root_path, class: 'btn btn-success' %>

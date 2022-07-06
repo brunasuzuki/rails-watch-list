@@ -6,6 +6,8 @@ class ListsController < ApplicationController
   def show
     # usa o id para pegar uma lista especifica
     @list = List.find(params[:id])
+    @bookmark = Bookmark.new
+    @movies = Movie.all.order(:title)
   end
 
   def new
@@ -18,6 +20,7 @@ class ListsController < ApplicationController
     # list_params `e um strong params
     if @list.save
       redirect_to @list
+      # redirect_to list_path(@list)
     else
       render :new
     end
