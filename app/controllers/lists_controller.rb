@@ -7,4 +7,14 @@ class ListsController < ApplicationController
     # usa o id para pegar uma lista especifica
     @list = List.find(params[:id])
   end
+
+  def new
+
+  end
+
+  def create
+
+  end
+
+
 end
