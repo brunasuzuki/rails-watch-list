@@ -1,5 +1,14 @@
 <div class="container">
   <h1><%= @list.name %></h1>
+  <% if @list.photo.attached? %>
+    <%= cl_image_tag @list.photo.key, width: 400 %>
+    <%# cl_image_tag  mostra a img que vai ser pegar pelo cloudinary %>
+    <%# key `e a id do cloudinary %>
+    <%# com a chave da api ele sabe da nossa conta, sabendo da nossa conta ele sabe o nosso endereco base e sabe a img q ta sendo guardada %>
+  <% else %>
+    <%= image_tag 'photo.jpg', width: 400 %>
+  <% end %>
+  <%# if eu tiver a img? ele mostra %>
 </div>
 
 <h3>Movies</h3>
