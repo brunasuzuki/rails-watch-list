@@ -7,6 +7,7 @@ class ListsController < ApplicationController
     # usa o id para pegar uma lista especifica
     @list = List.find(params[:id])
     @bookmark = Bookmark.new
+    @review = Review.new
     @movies = Movie.all.order(:title)
   end
 

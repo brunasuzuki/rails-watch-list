@@ -29,6 +29,28 @@
 <%= end %>
 
 <hr>
+<h3>Reviews</h3>
+<div class="row">
+  <% @list.reviews.each do |review| %>
+    <div class="col-6">
+      <p><%= review.comments %></p>
+      <p><%= review.rating %></p>
+    </div>
+  <% end %>
+</div>
+
+
+
+<hr>
+<h3>Write a review</h3>
+<%= simple_form_for [@list, @review] do |f| %>
+  <%= f.input :comment, placeholder: 'Write a review for this list...', lable: false %>
+  <%= f.input :rating %>
+  <%= f.submit class: 'btn btn-success' %>
+<%= end %>
+
+<hr>
+
 
 <%# a volta do caminho do botao do index.html.erb %>
 <%= link_to 'back', root_path, class: 'btn btn-success' %>
